@@ -1,0 +1,40 @@
+Google Vision integration guide for Antigravity v5
+
+1. Install the camera dependency
+   - Run: npm install expo-camera
+   - Confirm that expo-camera is added to package.json and rebuild if needed.
+
+2. Create a camera scan page
+   - Use expo-router to add a new route at app/Camera.tsx.
+   - Request camera permission with Camera.useCameraPermissions().
+   - Render a placeholder on first pass, then replace it with a live Camera preview.
+
+3. Capture images
+   - Use Camera.takePictureAsync() to capture a food photo.
+   - Store the local URI or base64 image data for upload.
+
+4. Prepare Google Cloud Vision / Nutrition API
+   - Create a Google Cloud project and enable the Cloud Vision API.
+   - Generate an API key or service account credentials.
+   - For food calorie estimation, consider using Cloud Vision to identify food items and then a nutrition database or Google Nutrition API / third-party API to map items to calories.
+
+5. Upload and analyze the image
+   - Convert the image to base64 or multipart form data.
+   - Send the image to the Cloud Vision API endpoint:
+     https://vision.googleapis.com/v1/images:annotate
+   - Request LABEL_DETECTION or FOOD_DETECTION features.
+
+6. Parse the response
+   - Extract the top food labels and confidence scores.
+   - Use the food item names to query a calorie API or use a local lookup table.
+   - For more accurate calories, combine Vision results with the detected portion size or user input.
+
+7. Display results in the app
+   - Show the recognized food items and estimated calories.
+   - Add a summary card or history log for scanned meals.
+   - Save results to user state or a backend if available.
+
+8. Security and production notes
+   - Do not ship API keys in client code.
+   - Use a secure backend or serverless function to call Google APIs if you need to protect credentials.
+   - Consider edge cases when food cannot be recognized clearly.

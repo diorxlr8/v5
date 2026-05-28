@@ -1,0 +1,8 @@
+05 - Protected routes & profile storage
+
+1. Create a session hook `useAuth()` that returns current user and loading state.
+2. Protect routes by redirecting to `/(auth)/Login` when not authenticated.
+3. Create a `profiles` table in Supabase with `user_id` (uuid) and profile fields.
+4. Use row-level security (RLS) to restrict access to owner rows.
+5. Implement profile CRUD using the Supabase client.
+6. Surface profile data in the `You` page (replace mock data with real profile).

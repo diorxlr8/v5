@@ -1,0 +1,32 @@
+DevOps tools to add for this Expo React Native project
+
+1. GitHub Actions
+   - Use for CI/CD workflows, automated tests, linting, and deployment pipelines.
+   - Can run `npm install`, `npm run lint`, `npm run test`, and publish builds or metadata.
+
+2. Expo Application Services (EAS)
+   - Provides managed build and submit pipelines for Expo apps.
+   - Use EAS Build for iOS/Android artifacts and EAS Submit for app store releases.
+
+3. Sentry
+   - Error tracking and performance monitoring for runtime crashes and exceptions.
+   - Integrates with React Native and Expo to capture device info, release version, and stack traces.
+
+4. Supabase / Firebase Hosting + Deployments
+   - Use backend-hosted services paired with deploy automation for functions, auth, and database.
+   - Helps manage environment variables, preview deployments, and staging workflows.
+
+5. Codepush / App Center (optional)
+   - Use for over-the-air updates to push JS bundle changes without a full app store release.
+   - Works with Expo Updates or Microsoft App Center for staged rollouts.
+
+6. Dependabot / Renovate
+   - Automated dependency update monitoring and pull requests.
+   - Keeps packages secure and up to date while issuing manageable PRs.
+
+How to use:
+- Start with GitHub Actions for CI lint/test.
+- Add EAS for native build releases and Expo update flows.
+- Add Sentry or similar for runtime monitoring.
+- Use Dependabot to keep dependencies current.
+- Connect deployment and backend changes with environment-aware config.

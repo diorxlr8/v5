@@ -1,0 +1,8 @@
+04 - Implement signup/login/logout flows
+
+1. Create `Login.tsx` and `Signup.tsx` screens (use existing `(auth)` folder pattern).
+2. Use `supabase.auth.signUp()` and `supabase.auth.signInWithPassword()` for email flows.
+3. On success, persist session and navigate to protected area (router.replace('/')).
+4. For logout, call `supabase.auth.signOut()` then router.replace('/(auth)/Login').
+5. Add error handling and loading states.
+6. Optional: add magic link and OAuth providers from Supabase dashboard.

@@ -1,0 +1,10 @@
+02 - Create project & get API keys
+
+1. Create a Supabase project at https://app.supabase.com
+2. Note your project URL and anon/public key (Settings → API).
+3. Create a dedicated role/DB schema later if you want separation.
+4. Store keys in your environment manager (.env or secrets)
+   - SUPABASE_URL
+   - SUPABASE_ANON_KEY
+
+Security: Never commit keys to git. Use env files or CI secrets.

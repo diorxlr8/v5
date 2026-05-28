@@ -1,0 +1,15 @@
+03 - Install SDK and configure env
+
+1. Install SDK and polyfill:
+   npm install @supabase/supabase-js react-native-url-polyfill
+
+2. Add polyfill at app entry (App.tsx or app/_layout.tsx):
+   import 'react-native-url-polyfill/auto'
+
+3. Create `supabaseClient.ts` in `app/` or `src/`:
+   import { createClient } from '@supabase/supabase-js'
+   export const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!)
+
+4. Add env vars to `.env` or to your Expo secrets. For local dev, use a `.env.local` (do not commit).
+
+5. Verify connectivity by calling `supabase.auth.getUser()` after client creation.

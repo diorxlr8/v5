@@ -1,0 +1,10 @@
+01 - Choose auth backend
+
+Recommendation: Supabase (primary)
+Why: Hosted Auth + Postgres + RLS + Edge functions + JS SDK works well with Expo.
+
+Quick alternatives:
+- Firebase (Auth + Firestore + Functions)
+- Clerk / Auth0 (hosted auth UX)
+
+Acceptance: Confirm Supabase or pick an alternative before proceeding.
